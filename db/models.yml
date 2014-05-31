@@ -1,3 +1,33 @@
+User:
+  - username: string
+  - password: string
+  - firstname: string
+  - lastname: string
+
+Car:
+  - make: string
+  - model: string
+  - range: float
+  - front_photo_url: string
+  - back_photo_url: string
+  - side_photo_url: string
+  - quarter_photo_url: string
+
+Trip:
+  - user_id: integer
+  - day: integer
+  - miles: integer
+
+Fuel:
+  - type: string
+  - cost_per_mile: float
+
+Review:
+  - car_id: integer
+  - user_id: integer
+  - comment: text
+
+
 # Example table for a typical Book model.
 #
 # Book:
