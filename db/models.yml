@@ -4,10 +4,19 @@ User:
   - firstname: string
   - lastname: string
 
+Power:
+  - type: string
+
 Car:
   - make: string
   - model: string
-  - range: float
+  - msrp: integer
+  - hp: integer
+  - drive_type: string
+  - electric_range: integer
+  - gas_range: integer
+  - total_range: integer
+  - hours_to_charge: float
   - front_photo_url: string
   - back_photo_url: string
   - side_photo_url: string
@@ -17,10 +26,6 @@ Trip:
   - user_id: integer
   - day: integer
   - miles: integer
-
-Fuel:
-  - type: string
-  - cost_per_mile: float
 
 Review:
   - car_id: integer
