@@ -5,7 +5,7 @@ User:
   - lastname: string
 
 Power:
-  - type: string
+  - energy_source: string
 
 Car:
   - make: string

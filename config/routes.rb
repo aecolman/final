@@ -1,4 +1,30 @@
 Rails.application.routes.draw do
+
+# Custome home page
+get "/" => "trips#index"
+
+# Resource: Trips
+
+get "/trips/show"
+get "/trips/edit"
+
+# Resource: Cars
+
+
+
+# Resource:
+
+
+
+
+
+
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
