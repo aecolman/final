@@ -1,0 +1,7 @@
+<% the_trip = Trip.find_by("id" => params["id"]) %>
+
+<h1>Day <%= the_trip["day"] %></h1>
+
+<p>You drove
+  <%# if the_trip["miles"] != nil %>
+<%= the_trip["miles"] %> miles on Day <%= the_trip["day"] %></p>

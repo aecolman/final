@@ -5,11 +5,25 @@ get "/" => "trips#index"
 
 # Resource: Trips
 
-get "/trips/show"
-get "/trips/edit"
+  # --- Create
+  get "/trips/new" => 'trips#new'
+  post "/trips" => 'trips#create'
+
+  # --- Read
+  get "/trips" => 'trips#index'
+  get "/trips/:id" => 'trips#show'
+
+  # -- Update
+  get "/trips/:id/edit" => 'trips#edit'
+  patch "/trips/:id" => 'trips#update'
+
+  # --- Delete
+  delete "/trips/:id" => 'trips#destroy'
+
 
 # Resource: Cars
 
+  get "/cars" => 'cars#index'
 
 
 # Resource:

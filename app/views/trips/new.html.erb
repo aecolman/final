@@ -1,0 +1,8 @@
+<% the_user = User.find_by("username" => "antsyalex") %>
+
+<h3>NEED TO ADD FORM FOR ADDING ADDITIONAL DAY HERE<h3>
+
+<% next_day = Trip.where("user_id" => the_user["id"]).maximum("day") %>
+
+<p>The trip being created is for Day <%= next_day + 1 %></p>
+

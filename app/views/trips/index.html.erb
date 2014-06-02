@@ -1,0 +1,33 @@
+<% the_user = User.find_by("username" => "antsyalex") %>
+
+<div class="row">
+  <div class="col-md-6">
+
+  <h3>My Driving Journal</h3>
+
+  <table class="table table-hover">
+    <thead>
+      <td><strong>Day</strong></td>
+      <td><strong>Miles Driven</strong></td>
+      <td><strong>Options</strong></td>
+    </thead>
+
+    <% Trip.where("user_id" => the_user["id"]).each do |the_trip| %>
+      <tbody>
+        <td><%= link_to the_trip["day"], "/trips/#{the_trip["id"]}" %></td>
+        <td><%= the_trip["miles"] %></td>
+        <td><%= link_to "Edit", "/trips/#{the_trip["id"]}/edit" %> | <%= link_to "Delete", "/trips/#{the_trip["id"]}", method: "delete" %></td>
+      </tbody>
+    <% end %>
+  </table>
+  </div>
+
+  <% sample_car = Car.find_by("make" => "Nissan") %>
+  <%= image_tag "#{sample_car["quarter_photo_url"]}" %>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <%= link_to "Add Another Day", "/trips/new" %>
+  </div>
+</div>
