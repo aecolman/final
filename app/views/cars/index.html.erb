@@ -1,15 +1,22 @@
 
+<% cars = Car.read %>
 
 <div class="row">
-  <div class="column-md-4">
-  CHEVY
-  </div>
 
-  <div class="column-md-4">
-  NISSAN
-  </div>
+  <% cars.each do |the_car| %>
+    <div class="col-md-4">
+      <%= image_tag the_car["front_photo_url"], :size => "250x166", :title => the_car["make"] %>
+    </div>
+  <% end %>
 
-  <div class="column-md-4">
-  TESLA
-  </div>
+</div>
+
+<div class="row">
+
+  <% cars.each do |the_car| %>
+    <div class="col-md-4">
+      <h4><%= the_car["make"] %> <%= the_car["model"] %></h4>
+    </div>
+  <% end %>
+
 </div>

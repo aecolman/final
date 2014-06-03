@@ -2,6 +2,12 @@
 
 <h1>Day <%= the_trip["day"] %></h1>
 
-<p>You drove
+<h4>You drove
   <%# if the_trip["miles"] != nil %>
-<%= the_trip["miles"] %> miles on Day <%= the_trip["day"] %></p>
+<%= the_trip["miles"] %> miles on Day <%= the_trip["day"] %>.</h4>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= link_to "Back To My Journal", "/trips", "class" => "btn btn-lg btn-success" %> or <%= link_to "Edit This Journal Entry", "/trips/#{the_trip["id"]}/edit" %>
+  </div>
+</div>

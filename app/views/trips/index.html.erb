@@ -3,7 +3,13 @@
 <div class="row">
   <div class="col-md-6">
 
-  <h3>My Driving Journal</h3>
+<div class="row">
+  <h2><%= the_user["firstname"]%>'s Driving Journal</h2>
+</div>
+
+<div class="row">
+  <h4>Use this journal to track the distance you drive each day.</h4>
+</div>
 
   <table class="table table-hover">
     <thead>
@@ -12,7 +18,7 @@
       <td><strong>Options</strong></td>
     </thead>
 
-    <% Trip.where("user_id" => the_user["id"]).each do |the_trip| %>
+    <% Trip.where("user_id" => the_user["id"]).order("day").each do |the_trip| %>
       <tbody>
         <td><%= link_to the_trip["day"], "/trips/#{the_trip["id"]}" %></td>
         <td><%= the_trip["miles"] %></td>
@@ -22,12 +28,14 @@
   </table>
   </div>
 
-  <% sample_car = Car.find_by("make" => "Nissan") %>
-  <%= image_tag "#{sample_car["quarter_photo_url"]}" %>
+  <div class="col-md-6">
+    <% sample_car = Car.sample %>
+    <%= image_tag "#{sample_car["quarter_photo_url"]}" %>
+  </div>
 </div>
 
 <div class="row">
   <div class="col-md-3">
-    <%= link_to "Add Another Day", "/trips/new" %>
+    <%= link_to "Add Another Day", "/trips/new", "class" => "btn btn-lg btn-success" %>
   </div>
 </div>

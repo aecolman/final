@@ -2,7 +2,9 @@
 
 <% next_day = Trip.where("user_id" => the_user["id"]).maximum("day") %>
 
-<h3>Create a new entry for the number of miles driven on Day <%= next_day + 1 %>.</h3>
+<div class="row">
+  <h3>Use this form to create a new entry for the number of miles you drove on Day <%= next_day + 1 %>.</h3>
+</div>
 
 <div class="row">
   <div class="column-md-6">
@@ -10,12 +12,12 @@
     <%= form_tag "/trips", "method" => "post" %>
 
       <div class="form_group">
-        <%= label_tag "user_id", "Enter The Number '#{the_user["id"]}'. This is your user ID." %>
+        <%= label_tag "user_id", "Enter the number '#{the_user["id"]}'. This is your user ID." %>
         <%= text_field_tag "user_id", "", "class" => "form-control" %>
       </div>
 
       <div class="form_group">
-        <%= label_tag "day", "Enter The Number '#{next_day + 1}'. This is the next day in your driving journal." %>
+        <%= label_tag "day", "Enter the number '#{next_day + 1}'. This is the next day in your driving journal." %>
         <%= text_field_tag "day", "", "class" => "form-control" %>
       </div>
 
@@ -24,7 +26,7 @@
         <%= text_field_tag "miles", "", "class" => "form-control" %>
       </div>
 
-    <%= submit_tag "Add To My Trips", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/trips" %>
+    <%= submit_tag "Add To My Journal", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/trips" %>
 
     </form>
 

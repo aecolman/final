@@ -7,7 +7,7 @@ class TripsController < ApplicationController
 
   def update
     the_trip = Trip.find_by("id" => params["id"])
-    the_trip.update("user_id" => params["user_id"], "day" => params["day"], "miles" => params["miles"])
+    the_trip.update("miles" => params["miles"])
     redirect_to "/trips"
   end
 

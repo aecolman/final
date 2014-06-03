@@ -1,4 +1,22 @@
-<h1>NEED TO INCLUDE FORM HERE</h1>
+<% the_day = Trip.find_by("id" => params["id"]) %>
 
-<p>The trip being edited has id = <%= params["id"]%></p>
+<div class="row">
+  <h3>Use this form to edit your journal entry for Day <%= the_day["day"] %>.</h3>
+</div>
 
+<div class="row">
+  <div class="column-md-6">
+
+    <%= form_tag "/trips/#{params["id"]}", "method" => "patch" %>
+
+      <div class="form_group">
+        <%= label_tag "miles", "Enter the number of miles you drove on Day #{the_day["day"]}." %>
+        <%= text_field_tag "miles", "", "class" => "form-control" %>
+      </div>
+
+    <%= submit_tag "Update Miles Driven", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/trips" %>
+
+    </form>
+
+  </div>
+</div>

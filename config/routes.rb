@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-# Custome home page
+# Custom home page
 get "/" => "trips#index"
 
 # Resource: Trips
@@ -24,17 +24,6 @@ get "/" => "trips#index"
 # Resource: Cars
 
   get "/cars" => 'cars#index'
-
-
-# Resource:
-
-
-
-
-
-
-
-
 
 
 
