@@ -23,8 +23,20 @@ get "/" => "trips#index"
 
 # Resource: Cars
 
-  get "/cars" => 'cars#index'
+  # --- Create
+  get "/cars/new" => 'cars#new'
+  post "/cars" => 'cars#create'
 
+  # --- Read
+  get "/cars" => 'cars#index'
+  get "/cars/:id" => 'cars#show'
+
+  # -- Update
+  get "/cars/:id/edit" => 'cars#edit'
+  patch "/cars/:id" => 'cars#update'
+
+  # --- Delete
+  delete "/cars/:id" => 'cars#destroy'
 
 
 
