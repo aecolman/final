@@ -1,3 +1,89 @@
-<h1>FILL ME IN!!!!</h1>
+<% the_car = Car.find_by("id" => params["id"]) %>
 
-<h4>This is the page for the car with id = <%= params["id"] %>.</h4>
+<div class="row">
+  <div class="col-md-4 text-center">
+    <%= image_tag the_car["quarter_photo_url"], :size => "360x240" %>
+  </div>
+  <div class="col-md-4 text-center">
+    <%= image_tag the_car["side_photo_url"], :size => "360x240" %>
+  </div>
+
+  <div class="col-md-4 text-center">
+    <%= image_tag the_car["back_photo_url"], :size => "360x240" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1><%= the_car["make"]%> <%= the_car["model"]%></h1>
+  </div>
+</div>
+
+<div class="row">
+  <p></p>
+</div>
+
+<div class="row">
+
+  <div class="col-md-2">
+    <div class="row">
+      <div class="col-md-2 text-center">
+        <p><%= link_to "Write A Review", "/cars", "class" => "btn btn-success" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 text-center">
+        <p><%= link_to "Back To List Of Cars", "/cars", "class" => "btn btn-danger" %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-5">
+    <table class="table table-hover table-bordered text-center">
+      <tbody>
+        <tr>
+          <td><strong>Fuel Source</strong></td>
+          <td><%= the_car["drive_type"] %></td>
+        </tr>
+        <tr>
+          <td><strong>Horsepower</strong></td>
+          <td><%= the_car["hp"] %></td>
+        </tr>
+        <tr>
+          <td><strong>MSRP</strong></td>
+          <td>$<%= the_car["msrp"] %></td>
+        </tr>
+        <tr>
+          <td><strong>Electric Range</strong></td>
+          <td><%= the_car["electric_range"] %> miles</td>
+        </tr>
+        <tr>
+          <td><strong>Gas Range</strong></td>
+          <td><%= the_car["gas_range"] %> miles</td>
+        </tr>
+        <tr>
+          <td><strong>Total Range</strong></td>
+          <td><%= the_car["total_range"] %> miles</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-5">
+    <table class="table table-hover table-bordered text-center">
+      <thead>
+        <tr>
+          <td><strong>Reviews of the <%= the_car["make"] %> <%= the_car["model"] %></strong></td>
+        </tr>
+      </thead>
+      <tbody>
+        <% Review.where("car_id" => the_car["id"]).each do |the_review| %>
+          <tr>
+            <td><%= the_review["comment"] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
