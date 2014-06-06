@@ -23,32 +23,45 @@
   <div class="col-md-12">
     <table class="table table-striped">
       <thead>
-        <th class="col-md-3 text-center">Item</th>
+        <th class="col-md-3 text-center"></th>
         <% cars.each do |the_car| %>
           <th class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></th>
         <% end %>
       </thead>
       <tbody>
-        <% cars.each do |the_car| %>
-        <% end %>
+        <tr>
+          <td class="col-md-3 text-center">TEXT HERE</td>
+            <% cars.each do |the_car| %>
+              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></td>
+            <% end %>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td class="col-md-3 text-center">TEXT HERE</td>
+            <% cars.each do |the_car| %>
+              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></td>
+            <% end %>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td class="col-md-3 text-center">TEXT HERE</td>
+            <% cars.each do |the_car| %>
+              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></td>
+            <% end %>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td class="col-md-3 text-center">TEXT HERE</td>
+            <% cars.each do |the_car| %>
+              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></td>
+            <% end %>
+        </tr>
       </tbody>
     </table>
   </div>
-
-  <% cars.each do |the_car| %>
-    <div class="col-md-3">
-      <table class="table table-striped text-center">
-        <tbody>
-          <tr>
-            <td>ITEM 1</td>
-          </tr>
-          <tr>
-            <td>ITEM 2</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  <% end %>
 </div>
 
 <div class="row">
