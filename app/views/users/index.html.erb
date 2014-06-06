@@ -1,0 +1,74 @@
+<% the_user = User.find_by("username" => "antsyalex") %>
+
+<% cars = Car.read %>
+
+
+<div class="row">
+  <div class="col-md-2">
+  </div>
+
+  <% cars.each do |the_car| %>
+    <div class="col-md-3">
+      <p><%= image_tag the_car["front_photo_url"], :size => "255x170", :title => the_car["make"] %></p>
+    </div>
+  <% end %>
+
+  <div class="col-md-1">
+  </div>
+</div>
+
+<div class="row">
+  <p> </p>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td><strong>TEST 1</strong></td>
+        </tr>
+        <tr>
+          <td><strong>TEST 2</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <% cars.each do |the_car| %>
+    <div class="col-md-3">
+      <table class="table table-striped text-center">
+        <tbody>
+          <tr>
+            <td>ITEM 1</td>
+          </tr>
+          <tr>
+            <td>ITEM 2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+  </div>
+
+  <% cars.each do |the_car| %>
+    <div class="col-md-3 text-center">
+      <p><%= link_to "Learn More About This Vehicle", "/cars/#{the_car["id"]}", "class" => "btn btn-success" %></p>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+  </div>
+
+  <% cars.each do |the_car| %>
+    <div class="col-md-3 text-center">
+      <p><%= link_to "Review This Vehicle", "/", "class" => "btn btn-danger" %></p>
+    </div>
+  <% end %>
+</div>

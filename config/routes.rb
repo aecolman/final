@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 # Custom home page
-get "/" => "trips#index"
+get "/" => "home#index"
 
 # Resource: Trips
 
@@ -37,6 +37,23 @@ get "/" => "trips#index"
 
   # --- Delete
   delete "/cars/:id" => 'cars#destroy'
+
+# Resource: Users
+
+  # --- Create
+  get "/users/new" => 'users#new'
+  post "/users" => 'users#create'
+
+  # --- Read
+  get "/users" => 'users#index'
+  get "/users/:id" => 'users#show'
+
+  # -- Update
+  get "/users/:id/edit" => 'users#edit'
+  patch "/users/:id" => 'users#update'
+
+  # --- Delete
+  delete "/users/:id" => 'users#destroy'
 
 
 
