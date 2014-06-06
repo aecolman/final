@@ -4,7 +4,7 @@
 
 
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-md-3">
   </div>
 
   <% cars.each do |the_car| %>
@@ -13,8 +13,6 @@
     </div>
   <% end %>
 
-  <div class="col-md-1">
-  </div>
 </div>
 
 <div class="row">
@@ -22,15 +20,17 @@
 </div>
 
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-md-12">
     <table class="table table-striped">
+      <thead>
+        <th class="col-md-3 text-center">Item</th>
+        <% cars.each do |the_car| %>
+          <th class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></th>
+        <% end %>
+      </thead>
       <tbody>
-        <tr>
-          <td><strong>TEST 1</strong></td>
-        </tr>
-        <tr>
-          <td><strong>TEST 2</strong></td>
-        </tr>
+        <% cars.each do |the_car| %>
+        <% end %>
       </tbody>
     </table>
   </div>
@@ -52,7 +52,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-md-3">
   </div>
 
   <% cars.each do |the_car| %>
@@ -63,12 +63,12 @@
 </div>
 
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-md-3">
   </div>
 
   <% cars.each do |the_car| %>
     <div class="col-md-3 text-center">
-      <p><%= link_to "Review This Vehicle", "/", "class" => "btn btn-danger" %></p>
+      <p><%= link_to "Review This Vehicle", "/", "class" => "btn btn-warning" %></p>
     </div>
   <% end %>
 </div>
