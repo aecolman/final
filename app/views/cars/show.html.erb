@@ -27,18 +27,18 @@
 
   <div class="col-md-2">
     <div class="row">
-      <div class="col-md-2 text-center">
-        <p><%= link_to "Write A Review", "/cars", "class" => "btn btn-success" %></p>
+      <div class="col-md-12">
+        <p><%= link_to "Write A Review", "/cars", "class" => "btn btn-warning" %></p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-2 text-center">
+      <div class="col-md-12">
         <p><%= link_to "Back To List Of Cars", "/cars", "class" => "btn btn-danger" %></p>
       </div>
     </div>
   </div>
 
-  <div class="col-md-5">
+  <div class="col-md-4">
     <table class="table table-hover table-bordered text-center">
       <tbody>
         <tr>
@@ -51,7 +51,7 @@
         </tr>
         <tr>
           <td><strong>MSRP</strong></td>
-          <td>$<%= the_car["msrp"] %></td>
+          <td><%= number_to_currency(the_car["msrp"], precision: 0) %></td>
         </tr>
         <tr>
           <td><strong>Electric Range</strong></td>
@@ -69,7 +69,7 @@
     </table>
   </div>
 
-  <div class="col-md-5">
+  <div class="col-md-6">
     <table class="table table-hover table-bordered text-center">
       <thead>
         <tr>

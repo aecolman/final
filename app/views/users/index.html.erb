@@ -30,33 +30,27 @@
       </thead>
       <tbody>
         <tr>
-          <td class="col-md-3 text-center">TEXT HERE</td>
+          <td class="col-md-3 text-center">How many consecutive days can I drive on a single charge?</td>
             <% cars.each do |the_car| %>
               <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></td>
             <% end %>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
-          <td class="col-md-3 text-center">TEXT HERE</td>
+          <td class="col-md-3 text-center">How often will I exceed the total range in a single day's driving?</td>
             <% cars.each do |the_car| %>
-              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></td>
+              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %> out of <%= the_car["make"] %> <%= the_car["model"] %> days, or <%= the_car["make"] %> <%= the_car["model"] %>% of the time</td>
             <% end %>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
-          <td class="col-md-3 text-center">TEXT HERE</td>
+          <td class="col-md-3 text-center">How long would it take to recharge the battery if I charge every night?</td>
             <% cars.each do |the_car| %>
-              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></td>
+              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %> hours</td>
             <% end %>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
-          <td class="col-md-3 text-center">TEXT HERE</td>
+          <td class="col-md-3 text-center">How long would it take to recharge the battery from empty to full?</td>
             <% cars.each do |the_car| %>
-              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></td>
+              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %> hours</td>
             <% end %>
         </tr>
       </tbody>
@@ -81,7 +75,7 @@
 
   <% cars.each do |the_car| %>
     <div class="col-md-3 text-center">
-      <p><%= link_to "Review This Vehicle", "/", "class" => "btn btn-warning" %></p>
+      <p><%= link_to "Write A Review", "/", "class" => "btn btn-warning" %></p>
     </div>
   <% end %>
 </div>
