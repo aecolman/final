@@ -1,4 +1,6 @@
 <% the_user = User.find_by("username" => "antsyalex") %>
+<% the_trips = Trip.where("user_id" => the_user["id"]) %>
+<% avg_miles = the_trips.average("miles") %>
 
 <% cars = Car.read %>
 
@@ -30,27 +32,27 @@
       </thead>
       <tbody>
         <tr>
-          <td class="col-md-3 text-center">How many consecutive days can I drive on a single charge?</td>
+          <td class="col-md-3 text-center">How long can I drive on a single charge?</td>
             <% cars.each do |the_car| %>
-              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %></td>
+              <td class="col-md-3 text-center"><%= number_to_human(the_car["total_range"] / avg_miles, precision: 2) %> days</td>
             <% end %>
         </tr>
         <tr>
           <td class="col-md-3 text-center">How often will I exceed the total range in a single day's driving?</td>
             <% cars.each do |the_car| %>
-              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %> out of <%= the_car["make"] %> <%= the_car["model"] %> days, or <%= the_car["make"] %> <%= the_car["model"] %>% of the time</td>
+              <td class="col-md-3 text-center"><%= the_trips.where(0 < avg_miles).count %> out of <%= the_trips.count %> days, or <%= the_car["make"] %> <%= the_car["model"] %>% of the time</td>
             <% end %>
         </tr>
         <tr>
           <td class="col-md-3 text-center">How long would it take to recharge the battery if I charge every night?</td>
             <% cars.each do |the_car| %>
-              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %> hours</td>
+              <td class="col-md-3 text-center"><%= number_to_human([avg_miles / the_car["electric_range"],1].min * the_car["hours_to_charge"], precision: 3) %> hours</td>
             <% end %>
         </tr>
         <tr>
           <td class="col-md-3 text-center">How long would it take to recharge the battery from empty to full?</td>
             <% cars.each do |the_car| %>
-              <td class="col-md-3 text-center"><%= the_car["make"] %> <%= the_car["model"] %> hours</td>
+              <td class="col-md-3 text-center"><%= number_to_human(the_car["hours_to_charge"]) %> hours</td>
             <% end %>
         </tr>
       </tbody>
