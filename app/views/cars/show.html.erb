@@ -28,7 +28,12 @@
   <div class="col-md-2">
     <div class="row">
       <div class="col-md-12">
-        <p><%= link_to "Write A Review", "/cars", "class" => "btn btn-warning" %></p>
+        <p><%= link_to "View Vehicle Website", the_car["url"], "class" => "btn btn-success" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p><%= link_to "Write A Review", "/reviews/#{the_car["id"]}/new", "class" => "btn btn-warning" %></p>
       </div>
     </div>
     <div class="row">

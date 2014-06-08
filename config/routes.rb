@@ -18,43 +18,59 @@ get "/" => "home#index"
   patch "/trips/:id" => 'trips#update'
 
   # --- Delete
-  delete "/trips/:id" => 'trips#destroy'
+  #delete "/trips/:id" => 'trips#destroy'
 
 
 # Resource: Cars
 
   # --- Create
-  get "/cars/new" => 'cars#new'
-  post "/cars" => 'cars#create'
+  #get "/cars/new" => 'cars#new'
+  #post "/cars" => 'cars#create'
 
   # --- Read
   get "/cars" => 'cars#index'
   get "/cars/:id" => 'cars#show'
 
   # -- Update
-  get "/cars/:id/edit" => 'cars#edit'
-  patch "/cars/:id" => 'cars#update'
+  #get "/cars/:id/edit" => 'cars#edit'
+  #patch "/cars/:id" => 'cars#update'
 
   # --- Delete
-  delete "/cars/:id" => 'cars#destroy'
+  #delete "/cars/:id" => 'cars#destroy'
 
 # Resource: Users
 
   # --- Create
-  get "/users/new" => 'users#new'
-  post "/users" => 'users#create'
+  #get "/users/new" => 'users#new'
+  #post "/users" => 'users#create'
 
   # --- Read
   get "/users" => 'users#index'
-  get "/users/:id" => 'users#show'
+  #get "/users/:id" => 'users#show'
 
   # -- Update
-  get "/users/:id/edit" => 'users#edit'
-  patch "/users/:id" => 'users#update'
+  #get "/users/:id/edit" => 'users#edit'
+  #patch "/users/:id" => 'users#update'
 
   # --- Delete
-  delete "/users/:id" => 'users#destroy'
+  #delete "/users/:id" => 'users#destroy'
 
+# Resource: Reviews
+
+  # --- Create
+  get "/reviews/:id/new" => 'reviews#new'
+  post "/reviews" => 'reviews#create'
+
+  # --- Read
+  #get "/reviews" => 'reviews#index'
+  #get "/reviews/:id" => 'reviews#show'
+
+  # -- Update
+  #get "/reviews/:id/edit" => 'reviews#edit'
+  #patch "/reviews/:id" => 'reviews#update'
+
+  # --- Delete
+  #delete "/reviews/:id" => 'reviews#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

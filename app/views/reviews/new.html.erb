@@ -1,0 +1,34 @@
+<% the_user = User.find_by("username" => "antsyalex") %>
+
+<div class="row">
+  <div class="col-md-12">
+    <h2>Write a Review</h2>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_tag "/reviews", "method" => "post" %>
+
+      <div class="form_group">
+        <%= label_tag "user_id", "Enter the number '#{the_user["id"]}'. This is your user ID." %>
+        <%= text_field_tag "user_id", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form_group">
+        <%= label_tag "car_id", "Enter the number '#{params["id"]}'. This is the identifier for the #{Car.find_by("id" => params["id"])["make"]} #{Car.find_by("id" => params["id"])["model"]}." %>
+        <%= text_field_tag "car_id", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form_group">
+        <%= label_tag "comments", "Enter your review comments here." %>
+        <%= text_field_tag "comments", "", "class" => "form-control" %>
+      </div>
+
+    <%= submit_tag "Submit My Review", "class" => "btn btn-lg btn-success" %> <%= link_to "Cancel", "/users", "class" => "btn btn-lg btn-danger" %>
+
+    </form>
+
+  </div>
+</div>

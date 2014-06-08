@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602210934) do
+ActiveRecord::Schema.define(version: 20140608042234) do
 
   create_table "cars", force: true do |t|
     t.string  "make"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140602210934) do
     t.string  "back_photo_url"
     t.string  "side_photo_url"
     t.string  "quarter_photo_url"
+    t.string  "url"
   end
 
   create_table "powers", force: true do |t|

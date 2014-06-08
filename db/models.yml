@@ -21,6 +21,7 @@ Car:
   - back_photo_url: string
   - side_photo_url: string
   - quarter_photo_url: string
+  - url: string
 
 Trip:
   - user_id: integer
