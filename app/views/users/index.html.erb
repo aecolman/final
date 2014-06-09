@@ -78,7 +78,7 @@
     <% end %>
     <% cars.each do |the_car| %>
       <div class="col-md-4 text-center">
-        <p><%= link_to "Go To Vehicle Website", "/cars/#{the_car["url"]}", "class" => "btn btn-success" %></p>
+        <p><%= link_to "Go To Vehicle Website", "#{the_car["url"]}", "class" => "btn btn-success", "target" => "_blank" %></p>
       </div>
     <% end %>
   </div>
