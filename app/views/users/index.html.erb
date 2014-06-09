@@ -73,17 +73,12 @@
   <div class="col-md-9">
     <% cars.each do |the_car| %>
       <div class="col-md-4 text-center">
-        <p><%= link_to "Back To Vehicle Page", "/cars/#{the_car["id"]}", "class" => "btn btn-danger" %></p>
-      </div>
-    <% end %>
-    <% cars.each do |the_car| %>
-      <div class="col-md-4 text-center">
         <p><%= link_to "Write A Review", "/reviews/#{the_car["id"]}/new", "class" => "btn btn-warning" %></p>
       </div>
     <% end %>
     <% cars.each do |the_car| %>
       <div class="col-md-4 text-center">
-        <p><%= link_to "View Vehicle Website", "/cars/#{the_car["url"]}", "class" => "btn btn-success" %></p>
+        <p><%= link_to "Go To Vehicle Website", "/cars/#{the_car["url"]}", "class" => "btn btn-success" %></p>
       </div>
     <% end %>
   </div>
