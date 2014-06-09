@@ -5,18 +5,16 @@
 
 <% cars = Car.read %>
 
-
 <div class="row">
   <div class="col-md-3">
-    <%= image_tag "http://www.yourenergyblog.com/wp-content/uploads/2013/02/electric-vehicle-industry.png", :size => "170x170" %>
+    <%= image_tag "http://www.yourenergyblog.com/wp-content/uploads/2013/02/electric-vehicle-industry.png", :size => "175x175" %>
   </div>
 
   <% cars.each do |the_car| %>
     <div class="col-md-3">
-      <p><%= image_tag the_car["front_photo_url"], :size => "255x170", :title => the_car["make"] %></p>
+      <%= image_tag the_car["front_photo_url"], :size => "255x170", :title => the_car["make"] %>
     </div>
   <% end %>
-
 </div>
 
 <div class="row">
@@ -25,6 +23,7 @@
 
 <div class="row">
   <div class="col-md-12">
+
     <table class="table table-striped table-hover">
       <thead>
         <th class="col-md-3 text-center"></th>
@@ -50,7 +49,7 @@
             <% end %>
         </tr>
         <tr>
-          <td class="col-md-3 text-center"><strong>How long will it take to recharge the battery if I charge every night?</strong></td>
+          <td class="col-md-3 text-center"><strong>How long will it take to recharge the battery if I plug in every night?</strong></td>
             <% cars.each do |the_car| %>
               <td class="col-md-3 text-center"><%= number_to_human([avg_miles.to_f / the_car["electric_range"].to_f,1].min * the_car["hours_to_charge"], precision: 2, significant: false) %> hours</td>
             <% end %>
@@ -63,6 +62,7 @@
         </tr>
       </tbody>
     </table>
+
   </div>
 </div>
 
@@ -70,6 +70,7 @@
   <div class="col-md-3">
     <h5><small>Note: Charge times assume a 240V connection point, available for purchase with most EVs.</small></h5>
   </div>
+
   <div class="col-md-9">
     <% cars.each do |the_car| %>
       <div class="col-md-4 text-center">

@@ -1,14 +1,19 @@
 <% the_trip = Trip.find_by("id" => params["id"]) %>
 
-<h1>Day <%= the_trip["day"] %></h1>
-
-<h3><small>You drove
-  <%# if the_trip["miles"] != nil %>
-  <%= the_trip["miles"] %> miles on Day <%= the_trip["day"] %>.
-</small></h3>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Day <%= the_trip["day"] %></h2>
+  </div>
+</div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-12">
+    <h3><small>You drove <%= the_trip["miles"] %> miles on Day <%= the_trip["day"] %>.</small></h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
     <%= link_to "Edit This Journal Entry", "/trips/#{the_trip["id"]}/edit", "class" => "btn btn-lg btn-success" %> <%= link_to "Back To My Journal", "/trips", "class" => "btn btn-lg btn-danger" %>
   </div>
 </div>

@@ -5,7 +5,7 @@
 </div>
 
 <div class="row">
-  <div class="column-md-6">
+  <div class="column-md-12">
 
     <%= form_tag "/trips/#{params["id"]}", "method" => "patch" %>
 
@@ -14,7 +14,7 @@
         <%= text_field_tag "miles", "", "class" => "form-control" %>
       </div>
 
-    <%= submit_tag "Update Miles Driven", "class" => "btn btn-lg btn-success" %> <%= link_to "Cancel", "/trips", "class" => "btn btn-lg btn-danger" %>
+      <%= submit_tag "Update Miles Driven", "class" => "btn btn-lg btn-success" %> <%= link_to "Cancel", "/trips", "class" => "btn btn-lg btn-danger" %>
 
     </form>
 

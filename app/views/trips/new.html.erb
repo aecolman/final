@@ -1,13 +1,13 @@
 <% the_user = User.find_by("username" => "antsyalex") %>
 
-<% next_day = Trip.where("user_id" => the_user["id"]).maximum("day") %>
+<% last_day = Trip.where("user_id" => the_user["id"]).maximum("day") %>
 
 <div class="row">
-  <h3>Use this form to create a new entry for the number of miles you drove on Day <%= next_day + 1 %>.</h3>
+  <h3>Use this form to create a new entry for the number of miles you drove on Day <%= last_day + 1 %>.</h3>
 </div>
 
 <div class="row">
-  <div class="column-md-6">
+  <div class="column-md-12">
 
     <%= form_tag "/trips", "method" => "post" %>
 
@@ -17,16 +17,16 @@
       </div>
 
       <div class="form_group">
-        <%= label_tag "day", "Enter the number '#{next_day + 1}'. This is the next day in your driving journal." %>
+        <%= label_tag "day", "Enter the number '#{last_day + 1}'. This is the next day in your driving journal." %>
         <%= text_field_tag "day", "", "class" => "form-control" %>
       </div>
 
       <div class="form_group">
-        <%= label_tag "miles", "Enter the number of miles you drove on Day #{next_day + 1}." %>
+        <%= label_tag "miles", "Enter the number of miles you drove on Day #{last_day + 1}." %>
         <%= text_field_tag "miles", "", "class" => "form-control" %>
       </div>
 
-    <%= submit_tag "Add To My Journal", "class" => "btn btn-lg btn-success" %> <%= link_to "Cancel", "/trips", "class" => "btn btn-lg btn-danger" %>
+      <%= submit_tag "Add To My Journal", "class" => "btn btn-lg btn-success" %> <%= link_to "Cancel", "/trips", "class" => "btn btn-lg btn-danger" %>
 
     </form>
 

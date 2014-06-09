@@ -1,10 +1,12 @@
-*** NOTE: NOT ALL OF THE FEATURES DESCRIBED BELOW HAVE BEEN IMPLEMENTED YET. ***
+This web app helps users who are interested in owning an electric vehicle better understand what it would be like to drive different EVs.
 
-This web app helps users who are interested in owning an electric vehicle better understand what it would be like to drive an EV.
+The app works in three steps. First, users can read about the three featured EVs on the Cars page. Next, they enter 7 days or more of their driving history on the My Journal page so the app can learn about their driving habits. Finally, the app will use the data from the journal to calculate how each EV would perform under the user's unique driving patterns and needs. (Users can also contribute reviews of any of the three featured EVs.)
 
-The app provides a daily driving journal where users can record the number of miles they drive each day for a week or more. The app then uses this data to provide guidance on how an EV would perform when subject to the same driving conditions. For three different EVs - the Chevy Volt, Nissan Leaf, and Tesla Model S - the app estimates:
-- how often each EV would need to be recharged
-- how long it would take each EV to be charged fully from empty
-- how long it would take each EV to be charged on average if it were plugged in at the end of each day of driving
+NOTE: User accounts have not been implemented for this final project. For now, the app assumes the user is always Alex Colman. Jeff Cohen and Brian Eng have also been included in the database as sample users, and sample driving journals and reviews from all three users have been included as well.
 
-The app also provides some descriptive information about each of the three EV models, including power source, range, HP, MSRP, etc.
+The final project requirements being met with this app are:
+- Implement at least one many-to-many association (the Review model is a many-to-many association between Users and Cars)
+- Implement at least three models
+- Populate the database via seed data
+- Proper use of a CSS framework like Bootstrap or Foundation (the app uses Bootstrap for all views)
+- Deploy your app to a live internet URL (the live url is http://vast-earth-5290.herokuapp.com)

@@ -5,12 +5,11 @@
 </div>
 
 <div class="row">
-
   <% cars.each do |the_car| %>
     <div class="col-md-4 text-center">
       <p><%= image_tag the_car["front_photo_url"], :size => "300x200", :title => the_car["make"] %></p>
       <h3><%= link_to "#{the_car["make"]} #{the_car["model"]}", "/cars/#{the_car["id"]}" %></h3>
-      <table class="table table-hover table-bordered">
+      <table class="table table-striped table-hover table-bordered">
         <tbody>
           <tr>
             <td><%= the_car["drive_type"] %></td>
@@ -26,5 +25,4 @@
       <p><%= link_to "Learn More About This Vehicle", "/cars/#{the_car["id"]}", "class" => "btn btn-success" %></p>
     </div>
   <% end %>
-
 </div>

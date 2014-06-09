@@ -7,7 +7,6 @@
   <div class="col-md-4 text-center">
     <%= image_tag the_car["side_photo_url"], :size => "360x240" %>
   </div>
-
   <div class="col-md-4 text-center">
     <%= image_tag the_car["back_photo_url"], :size => "360x240" %>
   </div>
@@ -15,7 +14,7 @@
 
 <div class="row">
   <div class="col-md-12 text-center">
-    <h1><%= the_car["make"]%> <%= the_car["model"]%></h1>
+    <h1><strong><%= the_car["make"]%> <%= the_car["model"]%></strong></h1>
   </div>
 </div>
 
@@ -24,7 +23,6 @@
 </div>
 
 <div class="row">
-
   <div class="col-md-2">
     <div class="row">
       <div class="col-md-12">
@@ -90,5 +88,4 @@
       </tbody>
     </table>
   </div>
-
 </div>
