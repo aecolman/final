@@ -73,7 +73,7 @@
 
   <div class="col-sm-9">
     <% cars.each do |the_car| %>
-      <div class="col-md-4 text-center">
+      <div class="col-sm-4 text-center">
         <p><%= link_to "Write A Review", "/reviews/#{the_car["id"]}/new", "class" => "btn btn-warning" %></p>
       </div>
     <% end %>
