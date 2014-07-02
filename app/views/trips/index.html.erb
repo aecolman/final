@@ -7,33 +7,33 @@
 </div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-sm-6">
     <table class="table table-striped table-hover table-bordered text-center">
       <thead>
-        <th class="col-md-1 text-center"><strong>Day</strong></th>
-        <th class="col-md-5 text-center"><strong>Miles Driven</strong></th>
-        <th class="col-md-5 text-center"><strong>Options</strong></th>
+        <th class="col-sm-1 text-center"><strong>Day</strong></th>
+        <th class="col-sm-5 text-center"><strong>Miles Driven</strong></th>
+        <th class="col-sm-5 text-center"><strong>Options</strong></th>
       </thead>
       <tbody>
         <% Trip.where("user_id" => the_user["id"]).order("day").each do |the_trip| %>
           <tr>
-            <td class="col-md-1"><%= link_to the_trip["day"], "/trips/#{the_trip["id"]}" %></td>
-            <td class="col-md-5"><%= the_trip["miles"] %></td>
-            <td class="col-md-5"><%= link_to "Edit This Entry", "/trips/#{the_trip["id"]}/edit" %><! | ><%#= link_to "Delete", "/trips/#{the_trip["id"]}", method: "delete" %></td>
+            <td class="col-sm-1"><%= link_to the_trip["day"], "/trips/#{the_trip["id"]}" %></td>
+            <td class="col-sm-5"><%= the_trip["miles"] %></td>
+            <td class="col-sm-5"><%= link_to "Edit This Entry", "/trips/#{the_trip["id"]}/edit" %><! | ><%#= link_to "Delete", "/trips/#{the_trip["id"]}", method: "delete" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
 
-  <div class="col-md-6 text-center">
+  <div class="col-sm-6 text-center">
     <% sample_car = Car.sample %>
-    <%= image_tag "#{sample_car["quarter_photo_url"]}", :size => "450x300" %>
+    <%= image_tag "#{sample_car["quarter_photo_url"]}", :size => "450x300", :class => "img-responsive" %>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-sm-12">
     <%= link_to "Add Another Day", "/trips/new", "class" => "btn btn-lg btn-success" %>
   </div>
 </div>

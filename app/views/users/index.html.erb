@@ -7,12 +7,12 @@
 
 <div class="row">
   <div class="col-sm-3">
-    <%= image_tag "http://www.yourenergyblog.com/wp-content/uploads/2013/02/electric-vehicle-industry.png", :size => "175x175" %>
+    <%= image_tag "http://www.yourenergyblog.com/wp-content/uploads/2013/02/electric-vehicle-industry.png", :size => "175x175", :class => "img-responsive" %>
   </div>
 
   <% cars.each do |the_car| %>
     <div class="col-sm-3">
-      <%= image_tag the_car["front_photo_url"], :size => "255x170", :title => the_car["make"] %>
+      <%= image_tag the_car["front_photo_url"], :size => "255x170", :title => the_car["make"], :class => "img-responsive" %>
     </div>
   <% end %>
 </div>
