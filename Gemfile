@@ -41,7 +41,7 @@ gem 'spring',        group: :development
 
 gem "quiet_assets", group: "development"
 gem "hirb", group: "development"
-gem "ez"
+gem "ez", '0.9.0'
 group :development, :test do
   gem "sqlite3"
 end
